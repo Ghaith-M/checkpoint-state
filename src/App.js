@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import eminem from "./eminem.jpg";
+import React from "react";
+class Welcome extends React.Component {
+  state = {
+    fullName: "",
+    bio: "",
+    profession: "",
+    image: "",
+  };
+  handleClick = () =>
+    this.setState({
+      fullName: "Ghaith Madhkour",
+      bio: "student",
+      profession: "Student",
+      image: eminem,
+    });
+  render() {
+    return (
+      <>
+        <h1>Hello click here to see my profile</h1>
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        <button onClick={this.handleClick}> ClickMe</button>
+        <br />
+        <br />
+        <h2>
+          {this.state.fullName}
+          <h2>
+            {this.state.bio}
+            <h2>{this.state.profession}</h2>
+          </h2>
+        </h2>
+        <div>
+          
+          <img src={this.state.image} />
+        </div>
+      </>
+    );
+  }
 }
-
-export default App;
+export default Welcome;
